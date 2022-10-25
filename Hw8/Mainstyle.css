@@ -1,0 +1,24 @@
+
+
+div{
+    color:white;
+    background-color:red;
+}
+.blueColor{
+    color:greenyellow;
+    font-family:arial;
+    font-size:24px;
+}
+
+a{
+    color:white;
+    background-color:red;
+}
+
+#specificColor{
+    color:blue;
+    font-family:verdana;
+    font-size:23px;
+}
+
+#Michael{color: hotpink;}
