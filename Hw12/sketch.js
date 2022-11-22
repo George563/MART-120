@@ -35,20 +35,30 @@ function draw()
 {
     background(200,50,70);
 
+character()
+charactermovement()
+createobject()
+obstacle()
+youwin()
+exit()
+borders()
+   
+    
+}
 
-    // exit message
-    textSize(16);
-  //  text("EXIT", ,)
-  fill(0)
-  rect(212,3,60,30)
-  fill(200)
-  text("Exit" ,227,15)
-
-    //character
+function character()
+{
     fill(23,40,123);
     ellipse(characterX,characterY,25, 50);
+}
 
-    // handle the keys
+function mouseClicked()
+{
+    mouseShapeX = mouseX;
+    mouseShapeY = mouseY;
+}
+function charactermovement()
+{
     if(keyIsDown(w))
     {
         characterY -= 5;   
@@ -66,7 +76,19 @@ function draw()
         characterX += 5;   
     }
 
-    // potential enemy
+}
+function createobject()
+{
+    fill(50,130,140);
+    circle(mouseShapeX, mouseShapeY, 25);
+    
+  
+        textSize(20);
+        text("X: " + mouseX,100,200 );
+        text("Y: " + mouseY,100,220 );
+}
+function obstacle()
+{
     fill(13,145,14);
     // draw the shape
     triangle(shapeX, shapeY, shapeX2, shapeY2, shapeX3, shapeY3) 
@@ -124,8 +146,9 @@ function draw()
     {
         squareY = height;
     }
-
-    // check to see if the character has left the exit
+}
+function youwin()
+{
     if(characterX > 210&& characterX <271 && characterY < 100)
     {
         fill(0);
@@ -133,22 +156,23 @@ function draw()
         textSize(26);
         text("You Win!", width/2-50, height/2-50);
     }
-
-    // create the shape based on the mouse click
-    fill(50,130,140);
-    circle(mouseShapeX, mouseShapeY, 25);
-    
-  
-        textSize(20);
-        text("X: " + mouseX,100,200 );
-        text("Y: " + mouseY,100,220 );
-    
 }
-
-function mouseClicked()
+function exit()
 {
-    mouseShapeX = mouseX;
-    mouseShapeY = mouseY;
+    textSize(16);
+    //  text("EXIT", ,)
+    fill(0)
+    rect(212,3,60,30)
+    fill(200)
+    text("Exit" ,227,15)
+}
+function borders()
+{
+    rect (0,0,40,600 )
+    rect(40, 560,500, 40)
+    rect(460,0,40,560)
+    rect(40,0,170,40)
+    rect(273,0,187,40)
 }
 
 
