@@ -30,7 +30,7 @@ var diameters = [];
 var r;
 var g;
 var b;
-var a;
+var a1;
 
 var shapeXSpeeds = [];
 var shapeYSpeeds = [];
@@ -65,8 +65,8 @@ borders()
 r = random(255); // r is a random number between 0 - 255
 g = random(100,200); // g is a random number betwen 100 - 200
 b = random(100); // b is a random number between 0 - 100
-a = random(200,255);
-fill(r,g,b,a);
+a1 = random(200,255);
+fill(r,g,b,a1);
 for (var i = 0; i < shapeXs.length; i++) 
 
     circle(shapeXs[i], shapeYs[i], diameters[i]);
