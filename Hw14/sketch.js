@@ -23,39 +23,38 @@ var squareYSpeed;
 
 var mouseShapeX;
 var mouseShapeY;
+
+var shapeXs = [];
+var shapeYs = [];
+var diameters = [];
+var r;
+var g;
+var b;
+var a;
+
+var shapeXSpeeds = [];
+var shapeYSpeeds = [];
 function setup(){
     createCanvas(500, 600);
     // get a random speed when the it first starts
-    shapeXSpeed = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
-    shapeYSpeed = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
+ 
 
-    var shapeXs = [];
-    var shapeYs = [];
-    var diameters = [];
-    var color = []
-    
-    var shapeXSpeeds = [];
-    var shapeYSpeeds = [];
+
     
     // create a shape when the mouse is clicked
     
     
     
         // get a random speed when the it first starts
-        for (var i = 0; i < 15; i++) {
-            shapeXSpeeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 13);
-            shapeYSpeeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 13);
-            shapeXs[i] = getRandomNumber(400);
-            shapeYs[i] = getRandomNumber(600);
-            diameters[i] = getRandomNumber(30);
-            color[i] = getRandomNumber (600);
+      
         }
-}
+
 
 function draw()
 {
     background(200,50,70);
 
+  
 character()
 charactermovement()
 createobject()
@@ -63,12 +62,27 @@ obstacle()
 youwin()
 exit()
 borders()
+r = random(255); // r is a random number between 0 - 255
+g = random(100,200); // g is a random number betwen 100 - 200
+b = random(100); // b is a random number between 0 - 100
+a = random(200,255);
+fill(r,g,b,a);
 for (var i = 0; i < shapeXs.length; i++) 
+
     circle(shapeXs[i], shapeYs[i], diameters[i]);
-    shapeXSpeeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
-    shapeYSpeeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
+    shapeXSpeeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 2)) + 1);
+    shapeYSpeeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 2)) + 1);
 
 
+    for (var i = 0; i < 15; i++) {
+        shapeXSpeeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 2)) + 1);
+        shapeYSpeeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 2)) + 1);
+        shapeXs[i] = getRandomNumber(400);
+        shapeYs[i] = getRandomNumber(600);
+        diameters[i] = getRandomNumber(30);
+        color[i] = getRandomNumber (600);
+
+    }
 
 
     // move the shape
