@@ -236,4 +236,8 @@ function borders()
 function getRandomNumber(number) {
     return Math.floor(Math.random() * number) + 10;
 }
+function mousePressed() {
+    //add 1 to variable clicks
+    clicks ++;
+  }
   
